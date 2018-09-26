@@ -1,42 +1,58 @@
-/* head style */ 
+.part-header
+  +col()
+  +cols(6)
+  background: silver
+
+
+.logo
+  display: flex
+  align-items: center
+  padding-top: 20px
+  color: #492c19
+  font-weight: 400
+  +lh(22,16)
+.logo__img
+  flex-shrink: 0
+  margin-right: 20px
+  padding-right: 20px
+  font-size: 0
+  border-right: 4px solid $or
+
+
  
 
+.header-info
+  display: flex
+  justify-content: flex-end
+  align-items: flex-end
+.header-info__icon
+  flex-shrink: 0
+  display: flex
+  justify-content: center
+  align-items: flex-end
+  width: 50px
+  height: 135px
+  padding-bottom: 10px
+  border-radius: 0 0 25px 25px
+  background-color: $or
+  .svg
+    +size(25)
+    fill: #fff
 
 
 
+.header-info__box
+  margin-left: 20px
+  padding-bottom: 10px
+  text-align: right
+  font-size: 20px
+  font-weight: 400
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .city 
+    margin-bottom: 15px
+    color: $or
+    font-size: 14px
+    font-weight: 300
 
 
 

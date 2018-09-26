@@ -4,3 +4,32 @@ block head
   - var title = 'Главная'
   - var bodyClass = ''
 block content
+  .top-block
+    +header()
+    .container
+      .row
+        .col
+          .top-block__container
+            .top-block__text
+              p Тест для подбора проектов деревянного дома:
+              h1.h1 Пройдите <span>тест</span> за 2 минуты <br>и <span>получите</span> варианты проектов дома
+              p Ответив на вопрос, получите:
+              p: span - вариант подарка №1
+            .top-block__variants.row
+              .top-block__variant
+                .variant__img: img(src="img/general/var_1.png", alt="image")
+                .variant__number 170<span>+</span>
+                .variant__desc Выполненных проектов домов, бань и др построек
+              .top-block__variant
+                .variant__img: img(src="img/general/var_2.png", alt="image")
+                .variant__number 10 <span>лет</span>
+                .variant__desc Опыта строительства в Нижнегородской области
+    .container
+      .row
+        .col
+          .main-action
+            a.main-action__btn(href="#") собрать дом сейчас <span>и получить подарок</span>
+
+    
+    img(src="img/general/house_action.png", alt="").preload-image
+    img(src="img/general/surp_action.png", alt="").preload-image

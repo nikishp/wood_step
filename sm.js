@@ -8,7 +8,7 @@ var settings = {
   offset: "30px", // отступ межу столбцами /2
   mobileFirst: false,
   container: {
-    maxWidth: "1200px",
+    maxWidth: "1260px",
     fields: "30px" // отступ справа/слева в контейнере
   },
   breakPoints: {

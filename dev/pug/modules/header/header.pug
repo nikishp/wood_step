@@ -1,6 +1,49 @@
 mixin header(name)
   - name = name || ''
-  header(class="header " + name)
+  header(class="header " + name) 
+    .container
+      .row
+        .part-header
+          .logo
+            .logo__img: img(src="img/content/logo.png", alt="image")
+            .logo__text Проектируем<br> Производим<br> Строим<br> Деревянные дома
+        .part-header
+          .header-info
+            .header-info__icon
+              +svg('phone')
+            .header-info__box
+              .city г. Нижний Новгород
+              a.phone(href="tel:88314103712") 8 (831) 410-37-12
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

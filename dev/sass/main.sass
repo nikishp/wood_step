@@ -43,6 +43,7 @@
 //smartgrid settings 
 .container
   +container()
+  width: 100%
 .row
   +row()
 .col
@@ -53,19 +54,47 @@
 
 
 
+.top-block
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 100vh
+  min-height: 800px
+
+  background: url(../img/general/house.png) no-repeat left center, url(../img/general/surp.png) no-repeat right center
+  transition: background .25s linear
+  background-color: rgba(0, 128, 0, 0.2)
+.top-block--action
+  background: url(../img/general/house_action.png) no-repeat left center, url(../img/general/surp_action.png) no-repeat right center
+
+.preload-image
+  visibility: hidden
+  display: none
 
 
 
+.top-block__container
+  max-width: 860px
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  background: silver
+.top-block__text
+  text-align: center
+  font-family: $gl
+  font-size: 20px
+  font-weight: 300
+
+  p
+    span
+      font-size: 18px
+      color: $or
 
 
-
-
-
-
-
-
-
-
+.top-block__variant
+  +col()
+  +cols(6)
+  text-align: center
 
 
 
