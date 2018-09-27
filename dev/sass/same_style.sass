@@ -3,7 +3,7 @@ body
   min-width: 300px
   font-family: $defFont
   font-size: $baseFontSize+px
-  font-weight: 400
+  font-weight: 300
   color: $def
   line-height: 1.2
   //line-height: 1.2 //if line height "auto" in Photoshop
@@ -95,7 +95,7 @@ h1,h2,h3,h4,h5,h6
   line-height: 1
 
 .h1
-  font-family: $gl
+  
   font-size: 42px
   font-weight: 800
   text-transform: uppercase
@@ -103,6 +103,33 @@ h1,h2,h3,h4,h5,h6
   line-height: 1.6
   span
     color: $or
+
+.h2  
+  text-align: center
+  
+  font-size: 36px
+  font-weight: 800
+  +lh(48,36)
+  text-transform: uppercase
+  letter-spacing: 0.36px
+  span
+    position: relative
+    &::before
+      content: '*'
+      position: absolute
+      top: 0px 
+      left: 100%
+      font-size: 23px
+      color: $or
+  b
+    color: $or
+    font-weight: inherit
+  &+p
+    text-align: center
+    
+    font-size: 17px
+    font-weight: 300
+
 
 
 .hidden
@@ -122,8 +149,75 @@ table
   align-items: center
   min-width: 100px
   user-select: none
+  cursor: pointer
   background: lightgrey
   transition: $tr
+
+
+.btn--lg
+  // flex-basis: 340px
+  // max-width: 340px
+  // flex-wrap: wrap
+  // align-items: center
+  // justify-content: center
+  // width: 100%
+  width: 340px
+  height: 80px
+
+  text-align: center
+  
+  font-size: 21px
+  font-weight: 800
+  text-transform: uppercase
+  letter-spacing: 0.6px
+
+  border-radius: 40px
+
+
+.btn--yel
+  color: #fff
+  background: linear-gradient(to top, #000 50%, $or 50%)
+  background-size: 100% 200%
+  background-position: left top
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,.2)
+  &:hover,&:focus,&:active
+    color: #fff
+    background-position: left bottom
+
+  span
+    display: block
+    width: 100%
+    font-family: $op
+    font-size: 15px
+    font-weight: 400
+    letter-spacing: 0.9px
+    text-transform: initial
+
+.btn--sm
+  width: 170px
+  height: 40px
+  border-radius: 20px
+.btn--empty
+
+  
+  font-size: 16px
+  font-weight: 800
+  text-transform: uppercase
+  letter-spacing: 0.4px
+
+  border: 3px dashed $or
+  background: none
+  // background: linear-gradient(to top, #000 50%, rgba(255, 255, 255, 0) 50%)
+  // background-size: 100% 200%
+  // background-position: left top
+  &:hover,&:focus,&:active
+    color: #fff
+    background: $def
+    border: 3px solid #000
+    // background-position: left bottom
+
+
+
 button[type='submit']
   .form-load
     width: 0

@@ -58,12 +58,14 @@
   display: flex
   flex-direction: column
   justify-content: space-between
-  height: 100vh
-  min-height: 800px
+  // height: 100vh
+  // min-height: 640px
+  min-height: 100vh
+
 
   background: url(../img/general/house.png) no-repeat left center, url(../img/general/surp.png) no-repeat right center
   transition: background .25s linear
-  background-color: rgba(0, 128, 0, 0.2)
+  // background-color: rgba(0, 128, 0, 0.2)
 .top-block--action
   background: url(../img/general/house_action.png) no-repeat left center, url(../img/general/surp_action.png) no-repeat right center
 
@@ -78,10 +80,10 @@
   width: 100%
   margin-left: auto
   margin-right: auto
-  background: silver
+  // background: silver
 .top-block__text
   text-align: center
-  font-family: $gl
+  
   font-size: 20px
   font-weight: 300
 
@@ -95,6 +97,220 @@
   +col()
   +cols(6)
   text-align: center
+
+
+.variant__img
+  height: 105px
+
+.variant__number 
+  margin: 30px 0 25px
+  
+  font-size: 36px
+  font-weight: 800
+  span
+    color: $or
+
+.variant__desc
+  
+  font-size: 18px
+  font-weight: 300
+  +lh(24,18)
+
+
+.main-action
+  margin-top: 50px
+  text-align: center
+.main-action__box
+  position: relative
+  display: inline-block
+  padding: 20px
+  border-radius: 60px
+  background-color: #f1f1f3
+  &::before
+    content: ''
+    position: absolute
+    bottom: 10%
+    left: 90%
+    +sprite($chip)
+    pointer-events: none
+    // transform: translate(70%,-50%)
+  // .btn
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+
+.gift-block
+  margin-top: -60px
+  padding-top: 130px
+  padding-bottom: 40px
+  background-color: #f1f1f3
+
+
+.gift-part
+  +col()
+  +cols(3)
+  text-align: center
+  // background: #000
+
+
+.gift__title
+  min-height: 45px
+  
+  font-size: 20px
+  font-weight: 800
+  line-height: 1.1
+  text-transform: uppercase
+  letter-spacing: 0.2px
+
+
+.gift__image
+  position: relative
+  display: inline-block
+  margin: 30px 0
+  // font-size: 0
+  // background: silver
+  img
+    border-radius: 50%
+    box-shadow: 0px 0px 11px 0 rgba(0, 0, 0, 0.2)
+.gift__desc
+  position: absolute
+  top: 0
+  right: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 50px
+  height: 50px
+  cursor: pointer
+
+  color: #ffffff
+  
+  font-size: 34px
+  font-weight: 800
+
+
+  border-radius: 50%
+  background-color: $or
+
+
+
+.tooltip
+  width: 285px
+  margin-top: 15px
+  // min-height: 91px
+  padding: 10px
+
+  
+  font-size: 16px
+  font-weight: 300
+  letter-spacing: 0.16px
+
+
+  border-radius: 10px
+  box-shadow: 0 0 10px rgba(38, 38, 38, 0.25)
+  background-color: #ffffff
+
+
+.tooltip-arrow
+  position: absolute
+  bottom: 100%
+  +triangle(top, 15px, 15px, #fff)
+
+
+.gift-part--current
+  .btn
+    color: #fff
+    background: $def
+    border: 3px solid #000
+
+
+
+
+.gift-chosen
+  margin-top: 40px
+  text-align: center
+  font-size: 30px
+  font-weight: 300
+  text-transform: uppercase
+  letter-spacing: 0.3px
+  b
+    display: block
+    margin-top: 10px
+    font-weight: 800
+    color: $or
+
+
+
+.action-block
+  text-align: center
+  background-color: #f1f1f3
+
+
+ 
+
+.action-block__btn-box
+  .btn
+    position: relative
+    &::before,&::after
+      content: ''
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+
+    &::before
+      right: 110%
+      +sprite($left)
+    &::after
+      left: 110%
+      +sprite($right)
+    &:hover
+      &::before
+        animation: rightAnim 2s infinite linear
+      &::after
+        animation: leftAnim 2s infinite linear
+@keyframes leftAnim
+  0%
+    margin-left: 0
+  50%
+    margin-left: 30px
+  100%
+    margin-left: 0
+ 
+@keyframes rightAnim
+  0%
+    margin-right: 0
+  50%
+    margin-right: 30px
+  100%
+    margin-right: 0
+
+
+
+
+.action-block__police
+  margin-top: 30px
+  margin-bottom: 50px
+  font-size: 18px
+  b
+    font-weight: inherit
+    color: $or
+  span
+    color: #fba439
+
+
+
+.foot
+  padding: 10px 0
+  text-align: center
+  color: #a8a7a7
+  font-family: $op
+  font-size: 16px
+  font-weight: 400
+  background-color: #e5e5e5
+
+
+
+
+
+
 
 
 
