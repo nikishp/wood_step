@@ -15,6 +15,23 @@ mixin header(name)
               .city г. Нижний Новгород
               a.phone(href="tel:88314103712") 8 (831) 410-37-12
 
+mixin header2(name)
+  - name = name || ''
+  header(class="header " + name) 
+    .container
+      .row
+        .col
+          a.logo(href="index.html")
+            span.logo__img: img(src="img/content/logo.png", alt="image")
+            span.logo__text Тест для подбора проектов <br>деревянного дома
+        //- .part-header
+          .header-info
+            .header-info__icon
+              +svg('phone')
+            .header-info__box
+              .city г. Нижний Новгород
+              a.phone(href="tel:88314103712") 8 (831) 410-37-12
+
 
  
 

@@ -1,0 +1,122 @@
+extends ../layout/main
+
+block head 
+  - var title = 'Тестирование'
+  - var bodyClass = ''
+block content
+  +header2(' header--step')
+
+  form(class='step-form ' action='#', enctype='multipart/form-data')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    .container 
+      .row
+        .col
+          .step-title Шаг <span>1</span>
+          fieldset.fieldset.fieldset--active.fieldset--f1
+            .row
+              .step-part
+                .title 
+                  span 1
+                  | Как планируете использовать дом ?
+
+                .quest-block
+                  label.quest 
+                    input(type="radio", checked, name="Как планируете использовать дом", value="Для проживания в летний период")
+                    span Для проживания в летний период
+                  label.quest
+                    input(type="radio", name="Как планируете использовать дом", value="Для круглогодичного проживания (одноэтажный дом)")
+                    span Для круглогодичного проживания
+                      i (одноэтажный дом)
+                  label.quest
+                    input(type="radio", name="Как планируете использовать дом", value="Для круглогодичного проживания (двуэтажный дом)")
+                    span Для круглогодичного проживания
+                      i (двуэтажный дом)
+                  label.quest
+                    input(type="radio", name="Как планируете использовать дом", value="Баня")
+                    span Баня
+                  label.quest
+                    input(type="radio", name="Как планируете использовать дом", value="Беседка, летняя кухня и т.д.")
+                    span Беседка, летняя кухня и т.д.
+                  label.quest
+                    input(type="radio", name="Как планируете использовать дом", value="Другое")
+                    span
+                      input(type="text", name="Как планируете использовать дом Другое", placeholder="Другое")
+                    //- textarea(name="Как планируете использовать дом", cols="30", rows="10")
+
+              .step-part 
+                .form-box(style="background-image: url(img/general/def_bg.png)")
+                  .form-box__sizing
+                    .sizing__item.sizing__item--count -
+                    //- .sizing__item.sizing__item--count 999999999 
+                    .sizing__item.sizing__item--units м<sup>2</sup>
+                  p Начните отвечать <br>для подбора вариантов дома
+
+    
+          .step-foot
+            .row
+              .step-part 
+                .fiel-controll 
+                  button.btn.btn--lg.btn--yel
+                    b Получить подарок
+                    +svg('next')
+              .step-part aa222
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //- 

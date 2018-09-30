@@ -29,25 +29,26 @@ block content
         .col
           .main-action
             .main-action__box.main-action__box--js
-              a.btn.btn--lg.btn--yel(href="#") 
+              a.btn.btn--lg.btn--yel.easyscroll-js(href="#scd") 
                 b собрать дом сейчас <span>и получить подарок</span>
 
     
     img(src="img/general/house_action.png", alt="").preload-image
     img(src="img/general/surp_action.png", alt="").preload-image
-
-  +gift()
+  .scd-screen#scd
     
+    +gift() 
+      
 
-  .action-block
-    .container
-      .row
-        .col
-          .action-block__btn-box
-              a.btn.btn--lg.btn--yel(href="#") 
-                b Получить подарок <span>ответив на 5 вопросов</span>
-          p Тест бесплатный. Данные защищены
-          .action-block__police <b>*</b>Прохождение теста дает возможность получить <span>подарок</span> при оплате заказа
+    .action-block
+      .container 
+        .row 
+          .col
+            .action-block__btn-box
+                a.action-block__btn-js.btn.btn--lg.btn--yel(href="step.html")
+                  b Получить подарок <span>ответив на 5 вопросов</span>
+            p Тест бесплатный. Данные защищены
+            .action-block__police <b>*</b>Прохождение теста дает возможность получить <span>подарок</span> при оплате заказа
 
 
   +foot() 

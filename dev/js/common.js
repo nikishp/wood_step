@@ -9,40 +9,51 @@
 
     //dynamicHeight($('.you_class'));
 
+  $('input[type="radio"]').styler();
 
-    $('.main-action__box--js').hover(function() {
-      $('.top-block').addClass('top-block--action');
-    }, function() {
-      $('.top-block').removeClass('top-block--action');
+
+
+  $('.main-action__box--js').hover(function() {
+    $('.top-block').addClass('top-block--action');
+  }, function() {
+    $('.top-block').removeClass('top-block--action');
+  });
+
+
+
+  {
+    var toolTips = $('.gift__desc');
+    toolTips.each(function(index, el) {
+      var toolData = $(this).data('tooltips');
+      new Tooltip(el, {
+        title: toolData,
+        placement: 'bottom',
+        html: true,
+                // trigger: 'click'
+              });
     });
-
-
-
-    {
-      var toolTips = $('.gift__desc');
-      toolTips.each(function(index, el) {
-        var toolData = $(this).data('tooltips');
-        new Tooltip(el, {
-          title: toolData,
-          placement: 'bottom',
-          html: true,
-              // trigger: 'click'
-            });
-      });
-    }//tooltips
+    } //tooltips
 
     {
-        $('.gift-chosen').hide();
+      $('.gift-chosen').hide();
 
       $('.gift__action .btn').on('click', function(event) {
         var curTitle = $(this).parents('.gift-part').find('.gift__title').text();
-        $('.gift-chosen b').text(curTitle);
-        $('.gift-chosen').slideDown();
-        // console.log("curTitle", curTitle);
-        $(this).text('Выбрано').parents('.gift-part').addClass('gift-part--current').siblings().removeClass('gift-part--current').find('.btn').text('Выбрать');
-      });
+            // console.log("curTitle", curTitle);
+            localStorage.setItem('title', curTitle);
+            var curImage = $(this).parents('.gift-part').find('.gift__image img').attr('src');
+            // console.log("curImage", curImage);
+            localStorage.setItem('image', curImage);
+            $('.gift-chosen b').text(curTitle);
+            $('.gift-chosen').slideDown();
+            $('.gift-warning').slideUp();
+            $(this).text('Выбрано').parents('.gift-part').addClass('gift-part--current').siblings().removeClass('gift-part--current').find('.btn').text('Выбрать');
 
-    }//gift block actions
+
+
+          });
+
+    } //gift block actions
 
 
     var $form = $('.form');
@@ -56,6 +67,38 @@
         localStorage.setItem('currentPage', pageName);
       });
 
+
+    $(".easyscroll-js").on("click", function(event) {
+
+      event.preventDefault();
+        // $.magnificPopup.close(); // закрывает поп-ап окно(если скролл из поп-ап окна)
+        var id = $(this).attr('href'),
+        top = $(id).offset().top + 70;
+
+        $('body,html').animate({
+          scrollTop: top
+        }, 600);
+      });
+
+
+    $(".action-block__btn-js").on('click', function(event) {
+      if (!$('.gift-part').is('.gift-part--current')) {
+        event.preventDefault();
+        $('.gift-warning').slideDown();
+      }
+    });
+
+
+
+
+    $('.fiel-controll .btn').on('click', function(event) {
+      var filLenght = $('.fieldset').length;
+      var filIndex = $('.fieldset--active').index()
+      $('.step-title span').text(filIndex);
+      if (filIndex < filLenght) {
+        $(this).parents('.step-form').find('.fieldset--active').next().addClass('fieldset--active').siblings().removeClass('fieldset--active');
+      } else {}
+    });
 
 
 
@@ -76,7 +119,7 @@ function pageWidget(pages) {
     var widgetStilization = $('<style>body{position:relative}.widget_wrap{position:fixed;top:0;left:-23px;z-index:9999;padding:10px 20px;background:#222;border-bottom-right-radius:10px;transition:all .3s ease;transform:translate(-100%,0)}.widget_wrap ul{max-width:220px;width:100%;display:flex;flex-wrap:wrap}.widget_wrap:after{content:" ";position:absolute;top:0;left:100%;width:24px;height:24px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAABGdBTUEAALGPC/xhBQAAAAxQTFRF////////AAAA////BQBkwgAAAAN0Uk5TxMMAjAd+zwAAACNJREFUCNdjqP///y/DfyBg+LVq1Xoo8W8/CkFYAmwA0Kg/AFcANT5fe7l4AAAAAElFTkSuQmCC) 50% 50% no-repeat #222;cursor:pointer}.widget_wrap:hover{left:0;transform:translate(0,0)}.widget_item{padding:0 0 10px}.widget_link{display:block;color:#fff;text-decoration:none;font-size:15px;width:100px}.widget_link:hover{color:#fff;text-decoration:underline}</style>');
     widgetStilization.prependTo(".widget_wrap")
   };
-  pageWidget(['index', 'thanks'])
+  pageWidget(['index', 'step', 'thanks'])
 
 
 //pixel-glass-js-master

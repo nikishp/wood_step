@@ -48,7 +48,7 @@ module.exports = function() {
         //slick-carousel
         //http://kenwheeler.github.io/slick/
         // 'dev/libs/slick-carousel/slick/slick.js',
-        'node_modules/slick-carousel/slick/slick.js',
+        // 'node_modules/slick-carousel/slick/slick.js',
 
         //Swiper
         //http://idangero.us/swiper/
@@ -75,7 +75,7 @@ module.exports = function() {
 
         //jQueryFormStyler
         //http://dimox.name/jquery-form-styler/
-        //'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+        'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
 
         //jQuery-One-Page-Nav-master
         //https://github.com/davist11/jQuery-One-Page-Nav
