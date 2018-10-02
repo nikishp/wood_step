@@ -15,36 +15,36 @@ block content
         .col
           .step-title Шаг <span>1</span>
           fieldset.fieldset.fieldset--active.fieldset--f1
-            .row
+            .row.row-fiel
               .step-part
                 .title 
                   span 1
                   | Как планируете использовать дом ?
 
                 .quest-block
-                  label.quest 
+                  label.quest(data-imgsrc="img/general/summer.jpg") 
                     input(type="radio", checked, name="Как планируете использовать дом", value="Для проживания в летний период")
                     span Для проживания в летний период
-                  label.quest
+                  label.quest(data-imgsrc="img/general/all_ff.jpg")
                     input(type="radio", name="Как планируете использовать дом", value="Для круглогодичного проживания (одноэтажный дом)")
                     span Для круглогодичного проживания
                       i (одноэтажный дом)
-                  label.quest
+                  label.quest(data-imgsrc="img/general/all_sf.jpg")
                     input(type="radio", name="Как планируете использовать дом", value="Для круглогодичного проживания (двуэтажный дом)")
                     span Для круглогодичного проживания
                       i (двуэтажный дом)
-                  label.quest
+                  label.quest(data-imgsrc="img/general/banya.jpg")
                     input(type="radio", name="Как планируете использовать дом", value="Баня")
                     span Баня
-                  label.quest
+                  label.quest(data-imgsrc="img/general/besedka.jpg")
                     input(type="radio", name="Как планируете использовать дом", value="Беседка, летняя кухня и т.д.")
                     span Беседка, летняя кухня и т.д.
-                  label.quest
-                    input(type="radio", name="Как планируете использовать дом", value="Другое")
-                    span
-                      input(type="text", name="Как планируете использовать дом Другое", placeholder="Другое")
+                  .quest(data-imgsrc="img/general/def_bg.png")
+                    input(type="radio", name="Как планируете использовать дом", value="Другое").inpfch
+                    span 
+                      input(type="text", name="Как планируете использовать дом Другое", disabled, placeholder="Другое").inpfin
                     //- textarea(name="Как планируете использовать дом", cols="30", rows="10")
-
+ 
               .step-part 
                 .form-box(style="background-image: url(img/general/def_bg.png)")
                   .form-box__sizing

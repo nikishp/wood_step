@@ -9,29 +9,42 @@
 
     //dynamicHeight($('.you_class'));
 
-  $('input[type="radio"]').styler();
+    $('input[type="radio"]').styler();
+
+    $('.fieldset--f1 input[type="radio"]').on('change', function(event) {
+
+      var curSrc = $(this).parents('.quest').data();
+      console.log("curSrc", curSrc);
+
+
+      if ($('input.inpfch').is(':checked')) {
+        $('.inpfin').attr("disabled", false);
+      } else {
+        $('.inpfin').attr("disabled", true);
+            // $('.inpfin').attr("disabled", true).val('');
+          }
+        });
+
+
+    $('.main-action__box--js').hover(function() {
+      $('.top-block').addClass('top-block--action');
+    }, function() {
+      $('.top-block').removeClass('top-block--action');
+    });
 
 
 
-  $('.main-action__box--js').hover(function() {
-    $('.top-block').addClass('top-block--action');
-  }, function() {
-    $('.top-block').removeClass('top-block--action');
-  });
-
-
-
-  {
-    var toolTips = $('.gift__desc');
-    toolTips.each(function(index, el) {
-      var toolData = $(this).data('tooltips');
-      new Tooltip(el, {
-        title: toolData,
-        placement: 'bottom',
-        html: true,
+    {
+      var toolTips = $('.gift__desc');
+      toolTips.each(function(index, el) {
+        var toolData = $(this).data('tooltips');
+        new Tooltip(el, {
+          title: toolData,
+          placement: 'bottom',
+          html: true,
                 // trigger: 'click'
               });
-    });
+      });
     } //tooltips
 
     {
