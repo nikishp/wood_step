@@ -21,6 +21,10 @@ module.exports = function() {
         // https://fancyapps.com/fancybox/3/
         // 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 
+        //ion.rangeslider
+        // http://ionden.com/a/plugins/ion.rangeslider/
+        'node_modules/ion-rangeslider/js/ion.rangeSlider.min.js',
+
         //NiceScroll
         //https://github.com/inuyaksa/jquery.nicescroll
         //'node_modules/nicescroll/dist/jquery.nicescroll.js',
@@ -30,7 +34,6 @@ module.exports = function() {
         //'node_modules/flatpickr/dist/flatpickr.min.js',
         //'node_modules/flatpickr/dist/l10n/ru.js',
         /*flatpickr end*/
-        
         
         //zoom
         //'dev/libs/zoom-master/jquery.zoom.js',
@@ -113,7 +116,6 @@ module.exports = function() {
         */
 
         //'dev/libs/insta_photo/inst.js',
-
 
         //object fit polyfill
         //https://github.com/bfred-it/object-fit-images

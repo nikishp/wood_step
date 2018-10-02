@@ -14,7 +14,7 @@ block content
       .row
         .col
           .step-title Шаг <span>1</span>
-          fieldset.fieldset.fieldset--active.fieldset--f1
+          fieldset.fieldset.fieldset--f1.fieldset--active
             .row.row-fiel
               .step-part
                 .title 
@@ -54,6 +54,61 @@ block content
                   p Начните отвечать <br>для подбора вариантов дома
 
     
+          fieldset.fieldset.fieldset--f2
+            .row.row-fiel
+              .step-part
+                .title 
+                  span 2
+                  | Укажите площадь дома:
+
+                .quest-block
+                  .range-slider
+                    .range-slider__begin от
+                    .range-slider__content
+                      <input type="text" id="example_id" name="example_name" value="" />
+
+
+
+        
+ 
+              .step-part  
+                .form-box
+                  .form-box__sizing
+                    .sizing__item.sizing__item--count -
+                    .sizing__item.sizing__item--units м<sup>2</sup>
+                  img(src="#", alt="image").sec-ste-img-js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           .step-foot
             .row
               .step-part 
@@ -61,8 +116,24 @@ block content
                   button.btn.btn--lg.btn--yel
                     b Получить подарок
                     +svg('next')
-              .step-part aa222
+              .step-part
+                .step-foot__box
+                  .foot-box__item
+                    .guarante
+                      .step-foot__img: img(src="", alt="image")
+                      .step-foot__desc
+                        .step-foot__subtitle Гарантированный подарок:
+                        .step-foot__title садовая мебель: стол, две скамьи
+                        a.guarante-choose(href="#chose_popup")
+                          span  Выбрать другой подарок
 
+                  .foot-box__plus +
+                  .foot-box__item
+                    .bonus
+                      .step-foot__img: img(src="img/general/free_surp.png", alt="image")
+                      .step-foot__desc
+                        .step-foot__subtitle Бонус:
+                        .step-foot__title секретный подарок
 
 
 
