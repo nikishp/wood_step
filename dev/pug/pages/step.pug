@@ -6,15 +6,15 @@ block head
 block content
   +header2(' header--step')
 
-  form(class='step-form ' action='#', enctype='multipart/form-data')
+  form(class='step-form form ' action='#', enctype='multipart/form-data')
     // Hidden Required Fields
-    input(name='form_subject', value='' + formTitle, type='hidden')
+    input(name='form_subject', value='Тест для подбора проектов деревянного дома', type='hidden')
     // END Hidden Required Fields
-    .container 
+    .container   
       .row
         .col
           .step-title Шаг <span>1</span>
-          fieldset.fieldset.fieldset--f1.fieldset--active
+          fieldset.fieldset.fieldset--f1
             .row.row-fiel
               .step-part
                 .title 
@@ -65,7 +65,17 @@ block content
                   .range-slider
                     .range-slider__begin от
                     .range-slider__content
-                      <input type="text" id="example_id" name="example_name" value="" />
+                      <input type="text" id="house_square" name="Укажите площадь дома" value="" />
+        
+                .title.title--fil2
+                  span 3
+                  | На какой бюджет вы рассчитываете ?
+
+                .quest-block
+                  .range-slider
+                    .range-slider__begin от
+                    .range-slider__content
+                      <input type="text" id="house_prise" name="На какой бюджет вы рассчитываете ?" value="" />
 
 
 
@@ -80,32 +90,137 @@ block content
 
 
 
+          fieldset.fieldset.fieldset--f3
+            .row.row-fiel
+              .step-part
+                .title 
+                  span 4
+                  | Какая почва на Вашем участке ?
+
+                .quest-block
+                  label.quest(data-imgsrc="img/general/pesok.jpg") 
+                    input(type="radio", checked, name="Какая почва на Вашем участке ?", value="Песок")
+                    span Песок
+                  label.quest(data-imgsrc="img/general/glina.jpg") 
+                    input(type="radio", name="Какая почва на Вашем участке ?", value="Глина")
+                    span Глина
+                  label.quest(data-imgsrc="img/general/syglinok.jpg") 
+                    input(type="radio", name="Какая почва на Вашем участке ?", value="Суглинок")
+                    span Суглинок
+                  //- label.quest(data-imgsrc="img/general/def_bg.png") 
+                  label.quest(data-imgsrc="") 
+                    input(type="radio",  name="Какая почва на Вашем участке ?", value="Не знаю")
+                    span Не знаю
+                  
+              .step-part 
+                .form-box
+                  .form-box__sizing
+                    .sizing__item.sizing__item--count -
+                    .sizing__item.sizing__item--units м<sup>2</sup>
+                  .fiel-content
+                    img(src="img/general/fynd.jpg", alt="image")
+                    .fiel-content__box
+                      .fiel-content__item
+                        .fiel-content__item-img: img(src="", alt="image")
+                      .fiel-content__desc
+                        b Виды почвы и их влияние
+                        | Вид почвы влияет на вид фундамента,<br> который подойдет вашему дому
+    
 
 
 
+    
+          fieldset.fieldset.fieldset--f4
+            .row.row-fiel
+              .step-part
+                .title 
+                  span 5
+                  | Выберите тип кровли ?
+
+                .quest-block.quest-block--bl5
+                  label.quest(data-imgsrc="img/general/cherepica.jpg") 
+                    input(type="radio", checked, name="Выберите тип кровли ?", value="Гибкая черепица")
+                    span Гибкая черепица
+                  label.quest(data-imgsrc="img/general/cherepica_metal.jpg") 
+                    input(type="radio", name="Выберите тип кровли ?", value="Металочерепица")
+                    span Металочерепица
+                  label.quest(data-imgsrc="img/general/ryberoid.jpg") 
+                    input(type="radio", name="Выберите тип кровли ?", value="Временная (рубероид)")
+                    span Временная (рубероид)
+        
+                .title.title--fil6
+                  span 6
+                  | Нужна ли терраса/балкон ?
+
+                .quest-block
+                  label.quest
+                    input(type="radio", checked, name="Нужна ли терраса/балкон ?", value="Да")
+                    span Да
+                  label.quest
+                    input(type="radio", name="Нужна ли терраса/балкон ?", value="Нет")
+                    span Нет
+                  label.quest
+                    input(type="radio", name="Нужна ли терраса/балкон ?", value="Не знаю")
+                    span Не знаю
+
+        
+              .step-part 
+                .form-box
+                  .form-box__sizing
+                    .sizing__item.sizing__item--count -
+                    .sizing__item.sizing__item--units м<sup>2</sup>
+                  .fiel-content
+                    img(src="img/general/f4house.jpg", alt="image")
+                    .fiel-content__box.fiel-content__box--quest5
+                      .fiel-content__item
+                        .fiel-content__item-img: img(src="", alt="image")
+                      .fiel-content__desc
+                        b Выбор типа кровли
+                        | Выбирая тип черепицы обратите внимание <br>на эксплуатационные характеристики<br> стоимость материалла и монтажа
+    
+                    .fiel-content__box.fiel-content__box--rev
+                      .fiel-content__item
+                        .fiel-content__item-img: img(src="img/general/veranda.jpg", alt="image")
+                      .fiel-content__desc
+                        b Открывая веранда
+                        | Веранду можно использовать как<br> летнюю столовую и зону отдыха
+    
 
 
 
+          fieldset.fieldset.fieldset--f5
+            .row.row-fiel
+              .step-part
+                .title 
+                  span 7
+                  | Спасибо за ответы!<br> Получите результат, оставив контакры:
 
+                .quest-block.quest-block--lst
+                  input(name='Выбранный подарок', value='', type='hidden').inp-lst-gft
+                  ul.quest-block__option
+                    li.quest-block__option-item - Подарок: <span class="lst-gift"> садовая мебель: стол, две скамьи</span>
+                    li.quest-block__option-item - Проект по Вашим пожеланиям и сметную стоимость
+                    li.quest-block__option-item - Каталог проектов деревянных домов (pdf - 2,7 Мб.)
 
+                  .form__item
+                    input(type="text", name="Как к Вам обращаться?", required, placeholder="Как к Вам обращаться?")
 
+                  .form__item
+                    input(type="tel", name="Телефон для консультации", required, placeholder="Телефон для консультации")
 
+                  .form__item
+                    input(type="email", name="Электронный ящик для проекта и каталога", required, placeholder="Электронный ящик для проекта и каталога")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                  .check-box
+                    .check-err
+                      label
+                        input(type="checkbox", checked, required, name="city-policy")
+                        | Отправлля сведения через электронную форму, вы  даете согласие на обработку, сбор, хранение и передачу третьим лицам предоставленной Вами информации на условиях 
+                    <a href="#police" class="popup-js">Политики конфеденциальности</a>
+                  
+              .step-part 
+                .form-box
+                  p.last-text Проект по<br> Вашим пожеланиям найдет!  
 
 
 
@@ -124,7 +239,7 @@ block content
                       .step-foot__desc
                         .step-foot__subtitle Гарантированный подарок:
                         .step-foot__title садовая мебель: стол, две скамьи
-                        a.guarante-choose(href="#chose_popup")
+                        a.guarante-choose(href="#chose_popup").popup-js
                           span  Выбрать другой подарок
 
                   .foot-box__plus +

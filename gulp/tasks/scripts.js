@@ -10,7 +10,7 @@ module.exports = function() {
 
         // dynamicHeight
         // example: dynamicHeight($('.you_class'));
-        'dev/libs/dynamicHeight/dynamicHeight.js',
+        // 'dev/libs/dynamicHeight/dynamicHeight.js',
         
         //magnific-popup
         //http://dimsemenov.com/plugins/magnific-popup/

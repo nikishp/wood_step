@@ -66,6 +66,11 @@
   background: url(../img/general/house.png) no-repeat left center, url(../img/general/surp.png) no-repeat right center
   transition: background .25s linear
   // background-color: rgba(0, 128, 0, 0.2)
+  overflow: hidden
+  +lg-block()
+    background: none
+
+
 .top-block--action
   background: url(../img/general/house_action.png) no-repeat left center, url(../img/general/surp_action.png) no-repeat right center
 
@@ -96,8 +101,10 @@
 .top-block__variant
   +col()
   +cols(6)
+  +cols-xsl(12)
   text-align: center
-
+  +xsl-block()
+    margin-top: 40px
 
 .variant__img
   height: 105px
@@ -136,7 +143,8 @@
     // transform: translate(70%,-50%)
   // .btn
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
-
+  +xsl-block()
+    width: 100%
 .scd-screen
   display: flex
   flex-direction: column
@@ -153,11 +161,15 @@
 
 
 .gift-part
+  position: relative
   +col()
   +cols(3)
+  +cols-lg(6)
+  +cols-xs(12)
   text-align: center
   // background: #000
-
+  +lg-block()
+    margin-top: 50px
 
 .gift__title
   min-height: 45px
@@ -208,21 +220,19 @@
 
 
 .tooltip
+  z-index: 20
   width: 285px
   margin-top: 15px
   // min-height: 91px
   padding: 10px
-
-  
   font-size: 16px
   font-weight: 300
   letter-spacing: 0.16px
-
-
   border-radius: 10px
   box-shadow: 0 0 10px rgba(38, 38, 38, 0.25)
   background-color: #ffffff
-
+  +lg-block()
+    width: 100%
 
 .tooltip-arrow
   position: absolute
@@ -269,7 +279,8 @@
       position: absolute
       top: 50%
       transform: translateY(-50%)
-
+      +smx-block()
+        display: none
     &::before
       right: 110%
       +sprite($left)
@@ -350,11 +361,12 @@
       right: 0
       z-index: -1
       background: #000
-   
+  +md-block() 
+    margin-bottom: 40px
 .step-part
   +col()
   +cols(6)
-
+  +cols-md(12)
 .fiel-controll 
   .svg
     +size(30,30)
@@ -364,9 +376,11 @@
 
 
 .fieldset
+  display: none
   // background: silver
 
 .fieldset--active
+  display: block
   background: #fff
 
 
@@ -380,17 +394,26 @@
   border: 6px dashed $or
   background-repeat: no-repeat
   background-position: center
+  +md-block()
+    height: 390px
+    margin-bottom: 40px
+  +xsl-block()
+    display: none
   p
     text-align: center
     font-size: 30px
     font-weight: 800
     letter-spacing: 0.3px
-
+  img
+    +object-fit(contain)
+    +md-block()
+      height: 100%
 
 .form-box__sizing
   position: absolute
   top: 20px
   right: 20px
+  z-index: 45
   min-width: 80px
 
 
@@ -438,10 +461,14 @@
     line-height: 1
     border-radius: 50%
     background-color: $or
+  +md-block()
+    font-size: 25px
 
-
-
-
+  +xsl-block()
+    display: block
+    padding-right: 0
+    span
+      margin-bottom: 10px
 .jq-checkbox, .jq-radio
   // vertical-align: -4px
   display: inline-flex
@@ -454,6 +481,9 @@
 
 .jq-checkbox.focused, .jq-radio.focused
   // border: 1px solid #08C
+
+.jq-checkbox
+  border-radius: 50%
 
 .jq-checkbox.disabled, .jq-radio.disabled
   opacity: .55
@@ -469,10 +499,25 @@
     background-color: $or
     // box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.7)
 
+.jq-checkbox.checked
+  .jq-checkbox__div 
+    width: 10px;
+    height: 5px;
+    // margin: 3px 0 0 3px;
+    border-bottom: 1px solid $or
+    border-left: 1px solid $or
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    // background: #000
+
+
+
+
 .quest-block
   padding-top: 40px
   padding-left: 40px
-
+  +xsl-block()
+    padding-left: 0
 .quest
   display: flex
   // align-items: center
@@ -511,7 +556,8 @@ input
 
 .row-fiel
   align-items: center
-
+  +md-block()
+    flex-direction: column-reverse
 
 .range-slider
   display: flex
@@ -521,6 +567,7 @@ input
 .range-slider__begin
   flex-shrink: 0
   margin-right: 10px
+  transform: translateY(-9px)
 
 .range-slider__content
   flex-grow: 1
@@ -528,9 +575,23 @@ input
 
 
 .irs
+  position: relative
   height: 55px
-  background: silver
-
+  // background: silver
+  &::before,&::after
+    content: ''
+    position: absolute
+    bottom: 3px
+    z-index: 3
+    width: 27px
+    height: 27px
+    background: #fff
+    box-shadow: inset 0 0 0 4px #e5e5e5
+    border-radius: 50%
+  &::after
+    right: 0
+  &::before
+    left: 0px
 .irs-with-grid
   height: 75px
   background: red
@@ -580,6 +641,7 @@ input
 
 .irs-slider
   top: 25px
+  z-index: 30
   width: 27px
   height: 27px
   // border: 1px solid #AAA
@@ -602,40 +664,43 @@ input
 
 .irs-from, .irs-to, .irs-single
   top: calc(100% + 15px)
-  z-index: 15
-  width: 138px
-  padding: 15px
+  z-index: 23
+  // width: 138px
+  padding: 15px 40px
+  padding-right: 60px
   font-size: 20px
   text-align: center
   border-radius: 10px
   box-shadow: 0 0 10px rgba(38, 38, 38, 0.25)
   background-color: #ffffff
   &::before
-    // content: ''
-    // position: absolute
-    // bottom: 100%
-    // left: 50%
-    // transform: translateX(-50%)
-    // +triangle(top, 15px, 15px, #fff)
-
     content: "";
     position: absolute;
     width: 0;
     height: 0;
-    // bottom: -2em;
     top: 17px
     left: 50%;
     border: 11px solid black;
     border-color: transparent transparent #fff #fff;
-    // background: #000
     transform-origin: 0 0;
     transform: rotate(-225deg) translateX(-100%)
-    // transform:  translateX(-50%)
-    
     box-shadow: -3px 3px 5px 0 rgba(38, 38, 38, 0.15)
 
+.irs-single
+  &::after
+    content: 'м2'
+    position: absolute
+    top: 50%
+    right: 33px
+    // background: red
+    transform: translateY(-50%)
 
 
+.js-irs-1
+  .irs-single
+    &::after
+      content: 'т.р.'
+      right: 25px
 
 // .lt-ie9
   .irs-from, .irs-to, .irs-single
@@ -658,26 +723,157 @@ input
 
 
 
+.title--fil2
+  margin-top: 100px
+
+.fieldset--f2
+  +md-block()
+    margin-bottom: 75px
+
+
+.fiel-content
+  position: relative
+  font-size: 0
+  // background: #000
+  +md-block()
+    height: 100%
+    // background: red
+
+.fiel-content__box
+  position: absolute
+  bottom: 0
+  left: 0
+  z-index: 10
+  display: flex
+  align-items: center
+  font-size: 14px
+  letter-spacing: 0.14px
+  b 
+    display: block
+    font-size: 18px
+    font-weight: 800
+    line-height: 24px
+    letter-spacing: 0.18px
+  &::before
+    content: ''
+    position: absolute
+    top: 5px
+    right: 0
+    bottom: 5px
+    left: 50px
+    z-index: -1
+    background: #fff
+    box-shadow: 0 0 10px rgba(38, 38, 38, 0.2)
+.fiel-content__item-img
+  +size(100)
+  border-radius: 50%
+  background-color: #fff
+  background-image: url(../img/general/quest.svg)
+  background-repeat: no-repeat
+  background-position: center
+  img
+    display: block
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    +object-fit(cover)
+
+
+.fiel-content__desc
+  padding: 20px
+
+
+.title--fil6
+  margin-top: 60px
+
+
+
+.fiel-content__box--quest5
+  bottom: auto
+  top: 0
+
+
+.fiel-content__box--rev
+  flex-direction: row-reverse
+  left: auto
+  right: 0
+  &::before
+    content: ''
+    position: absolute
+    top: 5px
+    right: 50px
+    bottom: 5px
+    left: 0
+    z-index: -1
+    background: #fff
+    box-shadow: 0 0 10px rgba(38, 38, 38, 0.2)
 
 
 
 
+.last-text
+  color: $or
+  font-size: 30px
+  font-weight: 800
+  +lh(48,30)
+  letter-spacing: 0.3px
 
 
+.quest-block__option
+  font-size: 18px
+  font-weight: 300
+  +lh(30,18)
 
 
+.form__item
+  position: relative
+  max-width: 375px
+  width: 100%
+  height: 45px
+  margin-top: 25px
+  border-radius: 3px
+  // border: 1px solid $or
+  // background: silver
+  input
+    display: block
+    max-width: 100%
+    width: 100%
+    height: 100%
+
+.quest-block--lst
+  padding-left: 80px
 
 
+.check-box
+  position: relative
+  margin-top: 30px
+  font-size: 16px
+  font-weight: 300
+  line-height: 26px
+  +lh(26,16)
+  a
+    display: block
+    color: $or
+    text-decoration: underline
+  +xsl-block()
+    padding-left: 30px
+  .jq-checkbox
+    position: absolute
+    top: 50%
+    right: calc(100% + 20px)
+    transform: translateY(-50%)
+    +xsl-block()
+      right: calc(100% + 10px)
 
-
-
-
-
-
-
-
-
-
+label.error
+  +xsl-block()
+    font-size: 13px
+.check-err
+  position: relative
+  label.error
+    position: absolute
+    top: calc(100% + 20px)
+    left: 0
 
 
 

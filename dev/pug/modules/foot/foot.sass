@@ -7,7 +7,14 @@
   display: flex
   // align-items: center
   // background: silver
-
+  +lg-block()
+  +md-block()
+    flex-wrap: nowrap
+    margin-top: 40px
+    flex-wrap: wrap
+  +smx-block()
+    flex-wrap: wrap
+  
 .foot-box__plus
   margin-top: 15px
   padding: 0 10px
@@ -15,12 +22,17 @@
   font-size: 72px
   font-weight: 800
   line-height: 0.7
-
+  +lg-block()
+    width: 100%
+    margin-top: 10px
+    margin-bottom: 10px
+    text-align: center
 
 
 .bonus,.guarante
   display: flex
-
+  +lg-block()
+    align-items: center
 
 .step-foot__img
   font-size: 0

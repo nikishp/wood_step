@@ -14,7 +14,7 @@ mixin gift()
       .container
         .row
           .col
-            h2.h2 
+            h2.h2  
               span Выберите подарок
               <br> за прохождение <b>теста</b>
             p Нажмите ”Выбрать” на понравившийся лот
@@ -51,3 +51,43 @@ mixin gift()
             .gift-chosen вы выбрали подарок:
               b Индивидуальный проект
             .gift-warning Выберите подарок
+
+
+
+mixin gift-popup()
+  .gift-block
+    .container
+      .row
+        .col
+          h2.h2 
+            span Выберите подарок
+            <br> за прохождение <b>теста</b>
+          p Нажмите ”Выбрать” на понравившийся лот
+        .gift-part
+          .gift__title Индивидуальный проект
+          .gift__image
+            .gift__desc(data-tooltips="планы, фасады, разрезы, 3D - виды") ?
+            img(src="img/general/gift_1.png", alt="image")
+          .gift__action
+            .btn.btn--sm.btn--empty выбрать
+        .gift-part
+          .gift__title Зондирование
+          .gift__image
+            .gift__desc(data-tooltips="геологические изучения грунта участкас целью выбора оптимального фундамента ") ?
+            img(src="img/general/gift_2.png", alt="image")
+          .gift__action
+            .btn.btn--sm.btn--empty выбрать
+        .gift-part
+          .gift__title садовая мебель: стол, две скамьи
+          .gift__image
+            .gift__desc(data-tooltips="Комплекты из бревна длиной 2000мм") ?
+            img(src="img/general/gift_3.png", alt="image")
+          .gift__action
+            .btn.btn--sm.btn--empty выбрать
+        .gift-part
+          .gift__title Лесница к крыльцу
+          .gift__image
+            .gift__desc(data-tooltips="Комплекты из бревна индивид дуальной высотой и шириной") ?
+            img(src="img/general/gift_4.png", alt="image")
+          .gift__action
+            .btn.btn--sm.btn--empty выбрать

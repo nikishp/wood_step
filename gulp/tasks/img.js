@@ -19,7 +19,7 @@ module.exports = function() {
 
   $.gulp.task('img:build', () => {
     return $.gulp.src(imgPath)
-    .pipe($.gp.image())
+//    .pipe($.gp.image())
     .pipe($.gulp.dest('build/img/'));
   });
 };

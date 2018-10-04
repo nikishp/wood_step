@@ -28,6 +28,9 @@ var settings = {
     xs: {
       width: "576px"
     },
+    xsl: {
+      width: "480px"
+    },
     xxs: {
       width: "380px"
     }

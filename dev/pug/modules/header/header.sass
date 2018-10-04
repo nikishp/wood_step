@@ -2,7 +2,7 @@
   +col()
   +cols(6)
   // background: silver
-
+  +cols-xs(12)
 .header--step
   .logo
     justify-content: center
@@ -15,6 +15,8 @@
   color: #492c19
   font-weight: 400
   +lh(22,16)
+  +xs-block()
+    justify-content: center
 .logo__img
   flex-shrink: 0
   margin-right: 20px
@@ -22,13 +24,15 @@
   font-size: 0
   border-right: 4px solid $or
 
+  
 
- 
 
 .header-info
   display: flex
   justify-content: flex-end
   align-items: flex-end
+  +xs-block()
+    justify-content: center
 .header-info__icon
   flex-shrink: 0
   display: flex
@@ -42,7 +46,10 @@
   .svg
     +size(25)
     fill: #fff
-
+  +xs-block()
+    +size(50)
+    margin-top: 20px
+    border-radius: 50%
 
 
 .header-info__box
@@ -57,7 +64,8 @@
     color: $or
     font-size: 14px
     font-weight: 300
-
+    +xs-block()
+      margin-bottom: 0
 
 
 
