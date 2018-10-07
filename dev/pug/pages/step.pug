@@ -13,39 +13,39 @@ block content
     .container   
       .row
         .col
-          .step-title Шаг <span>1</span>
+          .step-title#fsstf  Шаг <span>1</span>
           fieldset.fieldset.fieldset--f1
             .row.row-fiel
               .step-part
-                .title 
+                .title
                   span 1
                   | Как планируете использовать дом ?
 
                 .quest-block
                   label.quest(data-imgsrc="img/general/summer.jpg") 
-                    input(type="radio", checked, name="Как планируете использовать дом", value="Для проживания в летний период")
+                    input(type="radio", checked, name="Как_планируете_использовать_дом", value="Для проживания в летний период")
                     span Для проживания в летний период
                   label.quest(data-imgsrc="img/general/all_ff.jpg")
-                    input(type="radio", name="Как планируете использовать дом", value="Для круглогодичного проживания (одноэтажный дом)")
+                    input(type="radio", name="Как_планируете_использовать_дом", value="Для круглогодичного проживания (одноэтажный дом)")
                     span Для круглогодичного проживания
                       i (одноэтажный дом)
                   label.quest(data-imgsrc="img/general/all_sf.jpg")
-                    input(type="radio", name="Как планируете использовать дом", value="Для круглогодичного проживания (двуэтажный дом)")
+                    input(type="radio", name="Как_планируете_использовать_дом", value="Для круглогодичного проживания (двуэтажный дом)")
                     span Для круглогодичного проживания
                       i (двуэтажный дом)
                   label.quest(data-imgsrc="img/general/banya.jpg")
-                    input(type="radio", name="Как планируете использовать дом", value="Баня")
+                    input(type="radio", name="Как_планируете_использовать_дом", value="Баня")
                     span Баня
                   label.quest(data-imgsrc="img/general/besedka.jpg")
-                    input(type="radio", name="Как планируете использовать дом", value="Беседка, летняя кухня и т.д.")
+                    input(type="radio", name="Как_планируете_использовать_дом", value="Беседка, летняя кухня и т.д.")
                     span Беседка, летняя кухня и т.д.
                   .quest(data-imgsrc="img/general/def_bg.png")
-                    input(type="radio", name="Как планируете использовать дом", value="Другое").inpfch
+                    input(type="radio", name="Как_планируете_использовать_дом", value="Другое").inpfch
                     span 
                       input(type="text", name="Как планируете использовать дом Другое", disabled, placeholder="Другое").inpfin
                     //- textarea(name="Как планируете использовать дом", cols="30", rows="10")
  
-              .step-part 
+              .step-part
                 .form-box(style="background-image: url(img/general/def_bg.png)")
                   .form-box__sizing
                     .sizing__item.sizing__item--count -
@@ -77,10 +77,6 @@ block content
                     .range-slider__content
                       <input type="text" id="house_prise" name="На какой бюджет вы рассчитываете ?" value="" />
 
-
-
-        
- 
               .step-part  
                 .form-box
                   .form-box__sizing
@@ -143,7 +139,7 @@ block content
                     span Гибкая черепица
                   label.quest(data-imgsrc="img/general/cherepica_metal.jpg") 
                     input(type="radio", name="Выберите тип кровли ?", value="Металочерепица")
-                    span Металочерепица
+                    span Металлочерепица
                   label.quest(data-imgsrc="img/general/ryberoid.jpg") 
                     input(type="radio", name="Выберите тип кровли ?", value="Временная (рубероид)")
                     span Временная (рубероид)
@@ -176,13 +172,13 @@ block content
                         .fiel-content__item-img: img(src="", alt="image")
                       .fiel-content__desc
                         b Выбор типа кровли
-                        | Выбирая тип черепицы обратите внимание <br>на эксплуатационные характеристики<br> стоимость материалла и монтажа
+                        | Выбирая тип черепицы, обратите внимание <br>на эксплуатационные характеристики,<br> стоимость материала и монтажа
     
                     .fiel-content__box.fiel-content__box--rev
                       .fiel-content__item
                         .fiel-content__item-img: img(src="img/general/veranda.jpg", alt="image")
                       .fiel-content__desc
-                        b Открывая веранда
+                        b Открытая веранда
                         | Веранду можно использовать как<br> летнюю столовую и зону отдыха
     
 
@@ -190,10 +186,10 @@ block content
 
           fieldset.fieldset.fieldset--f5
             .row.row-fiel
-              .step-part
-                .title 
+              .step-part#lstodr
+                .title#ltj 
                   span 7
-                  | Спасибо за ответы!<br> Получите результат, оставив контакры:
+                  | Спасибо за ответы!<br> Получите результат, оставив контакты:
 
                 .quest-block.quest-block--lst
                   input(name='Выбранный подарок', value='', type='hidden').inp-lst-gft
@@ -213,15 +209,32 @@ block content
 
                   .check-box
                     .check-err
-                      label
+                      label 
                         input(type="checkbox", checked, required, name="city-policy")
                         | Отправлля сведения через электронную форму, вы  даете согласие на обработку, сбор, хранение и передачу третьим лицам предоставленной Вами информации на условиях 
                     <a href="#police" class="popup-js">Политики конфеденциальности</a>
                   
               .step-part 
                 .form-box
-                  p.last-text Проект по<br> Вашим пожеланиям найдет!  
-
+                  .last-text
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"></circle>
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                    </svg>
+                    | Проект по<br> Вашим пожеланиям найден!  
+                  .preload
+                    .demo
+                      .circle
+                        .inner
+                      .circle
+                        .inner
+                      .circle
+                        .inner
+                      .circle
+                        .inner
+                      .circle
+                        .inner
+                    | Подбираем проект
 
 
           .step-foot
@@ -229,7 +242,7 @@ block content
               .step-part 
                 .fiel-controll 
                   button.btn.btn--lg.btn--yel
-                    b Получить подарок
+                    b Следующий шаг
                     +svg('next')
               .step-part
                 .step-foot__box

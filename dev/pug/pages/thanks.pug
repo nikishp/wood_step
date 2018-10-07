@@ -5,23 +5,13 @@ block head
   // meta(http-equiv='refresh', content= '3; URL=index.html')
 block content
   +header()
-  .container
-    .row
-      .col
-        .top-block__container
-          .top-block__text
-            //- p Тест для подбора проектов деревянного дома:
-            p 
-            h1.h1 Спасибо за заявку ! <br>
-              span Мы свяжемся с Вами в ближайшее время
-            p Ответив на вопрос, получите:
-            p: span - вариант подарка №1
-          .top-block__variants.row
-            .top-block__variant
-              .variant__img: img(src="img/general/var_1.png", alt="image")
-              .variant__number 170<span>+</span>
-              .variant__desc Выполненных проектов<br> домов, бань и др построек
-            .top-block__variant
-              .variant__img: img(src="img/general/var_2.png", alt="image")
-              .variant__number 10 <span>лет</span>
-              .variant__desc Опыта строительства<br> в Нижнегородской области
+  .step-form
+    .container
+      .row
+        .col
+          .top-block__container
+            .top-block__text
+              //- p Тест для подбора проектов деревянного дома:
+              p 
+              h1.h1 Спасибо за заявку ! <br>
+                span Мы свяжемся с Вами в ближайшее время
