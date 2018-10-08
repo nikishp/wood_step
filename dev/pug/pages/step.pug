@@ -1,7 +1,7 @@
 extends ../layout/main
 
 block head 
-  - var title = 'Тестирование'
+  - var title = 'Экокуб || Тест для подбора проектов деревянного дома'
   - var bodyClass = ''
 block content
   +header2(' header--step')
@@ -192,26 +192,26 @@ block content
                   | Спасибо за ответы!<br> Получите результат, оставив контакты:
 
                 .quest-block.quest-block--lst
-                  input(name='Выбранный подарок', value='', type='hidden').inp-lst-gft
+                  input(name='Выбранный подарок', value='ИНДИВИДУАЛЬНЫЙ ПРОЕКТ', type='hidden').inp-lst-gft
                   ul.quest-block__option
                     li.quest-block__option-item - Подарок: <span class="lst-gift"> садовая мебель: стол, две скамьи</span>
                     li.quest-block__option-item - Проект по Вашим пожеланиям и сметную стоимость
                     li.quest-block__option-item - Каталог проектов деревянных домов (pdf - 2,7 Мб.)
 
                   .form__item
-                    input(type="text", name="Как к Вам обращаться?", required, placeholder="Как к Вам обращаться?")
+                    input(type="text", name="Как к Вам обращаться?", placeholder="Как к Вам обращаться?")
 
                   .form__item
-                    input(type="tel", name="Телефон для консультации", required, placeholder="Телефон для консультации")
+                    input(type="tel", name="Телефон для консультации", required, placeholder="Телефон для консультации").phone
 
                   .form__item
-                    input(type="email", name="Электронный ящик для проекта и каталога", required, placeholder="Электронный ящик для проекта и каталога")
+                    input(type="email", name="Электронный ящик для проекта и каталога", placeholder="Электронный ящик для проекта и каталога")
 
                   .check-box
                     .check-err
                       label 
                         input(type="checkbox", checked, required, name="city-policy")
-                        | Отправлля сведения через электронную форму, вы  даете согласие на обработку, сбор, хранение и передачу третьим лицам предоставленной Вами информации на условиях 
+                        | Отправляя сведения через электронную форму, вы  даете согласие на обработку, сбор, хранение и передачу третьим лицам предоставленной Вами информации на условиях 
                     <a href="#police" class="popup-js">Политики конфеденциальности</a>
                   
               .step-part 
@@ -248,10 +248,10 @@ block content
                 .step-foot__box
                   .foot-box__item
                     .guarante
-                      .step-foot__img: img(src="", alt="image")
+                      .step-foot__img: img(src="img/general/gift_1.png", alt="image") 
                       .step-foot__desc
                         .step-foot__subtitle Гарантированный подарок:
-                        .step-foot__title садовая мебель: стол, две скамьи
+                        .step-foot__title ИНДИВИДУАЛЬНЫЙ ПРОЕКТ
                         a.guarante-choose(href="#chose_popup").popup-js
                           span  Выбрать другой подарок
 

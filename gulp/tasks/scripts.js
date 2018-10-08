@@ -51,7 +51,7 @@ module.exports = function() {
         //slick-carousel
         //http://kenwheeler.github.io/slick/
         // 'dev/libs/slick-carousel/slick/slick.js',
-        // 'node_modules/slick-carousel/slick/slick.js',
+        'node_modules/slick-carousel/slick/slick.js',
 
         //Swiper
         //http://idangero.us/swiper/
